@@ -1,5 +1,5 @@
 {% set name = "collectfasta" %}
-{% set version = "3.3.0" %}
+{% set version = "3.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/jasongi/collectfasta/archive/{{ version }}.tar.gz
-  sha256: 375c84876f9621c7a8b15236ad0c81cc5726cd05c6bf8b64ff0a5c9aa3030fe1
+  sha256: c8620b88b68fde60c60dd6ae6d5835add6dcb856fdec01605c966820e5c486d2
 
 build:
   noarch: python
