@@ -1,0 +1,51 @@
+schema_version: 1
+
+context:
+  name: collectfasta
+  version: 3.3.1
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/jasongi/collectfasta/archive/${{ version }}.tar.gz
+  sha256: c8620b88b68fde60c60dd6ae6d5835add6dcb856fdec01605c966820e5c486d2
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - django >=4.2,<5.1
+    - django-storages >=1.6
+    - typing-extensions
+
+tests:
+  - python:
+      imports:
+        - collectfasta
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - pip check
+
+about:
+  summary: A fasta collectstatic command.
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/jasongi/collectfasta/
+
+extra:
+  recipe-maintainers:
+    - rxm7706
