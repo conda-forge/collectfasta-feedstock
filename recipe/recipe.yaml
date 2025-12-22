@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   name: collectfasta
-  version: "3.3.1"
+  version: "3.3.2"
 
 package:
   name: ${{ name|lower }}
@@ -11,10 +11,10 @@ package:
 
 source:
   url: https://github.com/jasongi/collectfasta/archive/${{ version }}.tar.gz
-  sha256: c8620b88b68fde60c60dd6ae6d5835add6dcb856fdec01605c966820e5c486d2
+  sha256: 7022d44129eacaabb0fb16b4d0f9413a2f5c4145db59935728b775dda0d44341
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
