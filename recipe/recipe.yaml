@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   name: collectfasta
-  version: "3.3.3"
+  version: "3.3.5"
 
 package:
   name: ${{ name|lower }}
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://github.com/jasongi/collectfasta/archive/${{ version }}.tar.gz
-  sha256: 7e5a5e76a274c19f7d5e118726dc5e251b7da57ab3e0a64e32f8e229efa6199c
+  sha256: 2462fa6330b6b2513159adbc2574e8694f692e57d77c4c0c492a252d3c72b225
 
 build:
   number: 0
